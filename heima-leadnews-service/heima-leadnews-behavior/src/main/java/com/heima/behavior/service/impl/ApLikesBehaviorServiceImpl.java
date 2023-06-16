@@ -13,7 +13,7 @@ import com.heima.model.user.pojos.ApUser;
 import com.heima.utils.thread.AppThreadLocalUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
+//import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,8 +26,8 @@ public class ApLikesBehaviorServiceImpl implements ApLikesBehaviorService {
     @Autowired
     private CacheService cacheService;
 
-    @Autowired
-    private KafkaTemplate<String,String> kafkaTemplate;
+    //@Autowired
+  //  private KafkaTemplate<String,String> kafkaTemplate;
 
     @Override
     public ResponseResult like(LikesBehaviorDto dto) {
@@ -65,7 +65,7 @@ public class ApLikesBehaviorServiceImpl implements ApLikesBehaviorService {
         }
 
         //发送消息，数据聚合
-        kafkaTemplate.send(HotArticleConstants.HOT_ARTICLE_SCORE_TOPIC,JSON.toJSONString(mess));
+      //  kafkaTemplate.send(HotArticleConstants.HOT_ARTICLE_SCORE_TOPIC,JSON.toJSONString(mess));
 
 
         return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);

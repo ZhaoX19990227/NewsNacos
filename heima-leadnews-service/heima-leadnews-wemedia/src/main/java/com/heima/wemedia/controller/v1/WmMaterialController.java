@@ -19,11 +19,21 @@ public class WmMaterialController {
     private WmMaterialService wmMaterialService;
 
 
+    /**
+     * 上传图片
+     * @param multipartFile
+     * @return
+     */
     @PostMapping("/upload_picture")
     public ResponseResult uploadPicture(MultipartFile multipartFile){
         return wmMaterialService.uploadPicture(multipartFile);
     }
 
+    /**
+     * 图片列表
+     * @param dto
+     * @return
+     */
     @PostMapping("/list")
     public ResponseResult findList(@RequestBody WmMaterialDto dto){
         return wmMaterialService.findList(dto);

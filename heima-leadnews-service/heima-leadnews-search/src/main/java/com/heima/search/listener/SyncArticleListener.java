@@ -10,7 +10,7 @@ import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.annotation.KafkaListener;
+//import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class SyncArticleListener {
     @Autowired
     private RestHighLevelClient restHighLevelClient;
 
-    @KafkaListener(topics = ArticleConstants.ARTICLE_ES_SYNC_TOPIC)
+   // @KafkaListener(topics = ArticleConstants.ARTICLE_ES_SYNC_TOPIC)
     public void onMessage(String message){
         if(StringUtils.isNotBlank(message)){
 

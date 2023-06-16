@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
+//import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -80,13 +80,13 @@ public class ArticleFreemarkerServiceImpl implements ArticleFreemarkerService {
                     .set(ApArticle::getStaticUrl,path));
 
             //发送消息，创建索引
-            createArticleESIndex(apArticle,content,path);
+          //  createArticleESIndex(apArticle,content,path);
 
         }
     }
 
-    @Autowired
-    private KafkaTemplate<String,String> kafkaTemplate;
+   // @Autowired
+    //private KafkaTemplate<String,String> kafkaTemplate;
 
     /**
      * 送消息，创建索引
@@ -94,13 +94,13 @@ public class ArticleFreemarkerServiceImpl implements ArticleFreemarkerService {
      * @param content
      * @param path
      */
-    private void createArticleESIndex(ApArticle apArticle, String content, String path) {
-        SearchArticleVo vo = new SearchArticleVo();
-        BeanUtils.copyProperties(apArticle,vo);
-        vo.setContent(content);
-        vo.setStaticUrl(path);
-
-        kafkaTemplate.send(ArticleConstants.ARTICLE_ES_SYNC_TOPIC, JSON.toJSONString(vo));
-    }
+//    private void createArticleESIndex(ApArticle apArticle, String content, String path) {
+//        SearchArticleVo vo = new SearchArticleVo();
+//        BeanUtils.copyProperties(apArticle,vo);
+//        vo.setContent(content);
+//        vo.setStaticUrl(path);
+//
+//        //kafkaTemplate.send(ArticleConstants.ARTICLE_ES_SYNC_TOPIC, JSON.toJSONString(vo));
+//    }
 
 }

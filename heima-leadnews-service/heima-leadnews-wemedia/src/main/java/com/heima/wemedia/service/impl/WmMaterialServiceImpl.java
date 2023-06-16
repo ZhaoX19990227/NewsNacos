@@ -50,10 +50,10 @@ public class WmMaterialServiceImpl extends ServiceImpl<WmMaterialMapper, WmMater
         String fileName = UUID.randomUUID().toString().replace("-", "");
         //aa.jpg
         String originalFilename = multipartFile.getOriginalFilename();
-        String postfix = originalFilename.substring(originalFilename.lastIndexOf("."));
+        String prefix = originalFilename.substring(originalFilename.lastIndexOf("."));
         String fileId = null;
         try {
-            fileId = fileStorageService.uploadImgFile("", fileName + postfix, multipartFile.getInputStream());
+            fileId = fileStorageService.uploadImgFile("", fileName + prefix, multipartFile.getInputStream());
             log.info("上传图片到MinIO中，fileId:{}",fileId);
         } catch (IOException e) {
             e.printStackTrace();

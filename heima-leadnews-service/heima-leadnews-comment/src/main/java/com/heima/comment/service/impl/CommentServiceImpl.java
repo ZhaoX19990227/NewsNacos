@@ -26,7 +26,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.kafka.core.KafkaTemplate;
+//import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -45,8 +45,8 @@ public class CommentServiceImpl implements CommentService {
     @Autowired
     private IArticleClient articleClient;
 
-    @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+//    @Autowired
+//    private KafkaTemplate<String, String> kafkaTemplate;
 
     @Override
     public ResponseResult saveComment(CommentSaveDto dto) {
@@ -97,7 +97,7 @@ public class CommentServiceImpl implements CommentService {
         mess.setArticleId(dto.getArticleId());
         mess.setAdd(1);
         mess.setType(UpdateArticleMess.UpdateArticleType.COMMENT);
-        kafkaTemplate.send(HotArticleConstants.HOT_ARTICLE_SCORE_TOPIC,JSON.toJSONString(mess));
+       // kafkaTemplate.send(HotArticleConstants.HOT_ARTICLE_SCORE_TOPIC,JSON.toJSONString(mess));
 
         return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);
     }

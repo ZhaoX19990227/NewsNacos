@@ -6,12 +6,12 @@ spring:
       host: 192.168.200.130
       port: 27017
       database: leadnews-comment
-  kafka:
-    bootstrap-servers: 192.168.200.130:9092
-    producer:
-      retries: 10
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#  kafka:
+#    bootstrap-servers: 192.168.200.130:9092
+#    producer:
+#      retries: 10
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
   application:
     name: leadnews-comment
   cloud:

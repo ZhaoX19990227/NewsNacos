@@ -3,31 +3,31 @@ server:
 spring:
   application:
     name: leadnews-wemedia
-  data:
-    mongodb:
-      host: 192.168.200.130
-      port: 27017
-      database: leadnews-comment
+#  data:
+#    mongodb:
+#      host: 192.168.23.101
+#      port: 27017
+#      database: leadnews-comment
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.200.130:8848
+        server-addr: 127.0.0.1:8848
       config:
-        server-addr: 192.168.200.130:8848
+        server-addr: 127.0.0.1:8848
         file-extension: yml
-  kafka:
-    bootstrap-servers: 192.168.200.130:9092
-    producer:
-      retries: 10
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#  kafka:
+#    bootstrap-servers: 192.168.23.101:9092
+#    producer:
+#      retries: 10
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
   redis:
-    host: 192.168.200.130
-    password: leadnews
+    host: 127.0.0.1
+    password: root
     port: 6379
 aliyun:
-  accessKeyId: LTAI5tSZLpccADjoKTv2BfYh
-  secret: 2tl80EI64ITAZ5sxl7vvId0yWGI01i
+  accessKeyId: LTAI5tGG5YxawWvCz4HUWihE
+  secret: n7VqFtDGwiwXspBzSrcJOjFiWv5SQg
   #  aliyun.scenes=porn,terrorism,ad,qrcode,live,logo
   scenes: terrorism
 feign:
@@ -40,6 +40,6 @@ feign:
       default:
         connectTimeout: 2000
         readTimeout: 2000
-tess4j:
-  data-path: D:\workspace\tessdata
-  language: chi_sim
+#tess4j:
+#  data-path: D:\workspace\tessdata
+#  language: chi_sim

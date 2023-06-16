@@ -1383,19 +1383,20 @@ public class CacheService extends CachingConfigurerSupport {
      * @return
      */
     public Set<String> scan(String patten){
-        Set<String> keys = stringRedisTemplate.execute((RedisCallback<Set<String>>) connection -> {
-            Set<String> result = new HashSet<>();
-            try (Cursor<byte[]> cursor = connection.scan(new ScanOptions.ScanOptionsBuilder()
-                    .match(patten).count(10000).build())) {
-                while (cursor.hasNext()) {
-                    result.add(new String(cursor.next()));
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return result;
-        });
-        return  keys;
+//        Set<String> keys = stringRedisTemplate.execute((RedisCallback<Set<String>>) connection -> {
+//            Set<String> result = new HashSet<>();
+//            try (Cursor<byte[]> cursor = connection.scan(new ScanOptions.ScanOptionsBuilder()
+//                    .match(patten).count(10000).build())) {
+//                while (cursor.hasNext()) {
+//                    result.add(new String(cursor.next()));
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return result;
+//        });
+//        return  keys;
+        return null;
     }
     
     /**

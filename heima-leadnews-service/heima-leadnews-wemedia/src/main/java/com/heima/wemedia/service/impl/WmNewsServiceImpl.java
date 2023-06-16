@@ -32,7 +32,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
+//import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -312,8 +312,8 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
         return ResponseResult.okResult(wmNews);
     }
 
-    @Autowired
-    private KafkaTemplate kafkaTemplate;
+//    @Autowired
+//    private KafkaTemplate kafkaTemplate;
 
     /**
      * 文章的上下架
@@ -348,7 +348,7 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
                 Map<String,Object> map = new HashMap<>();
                 map.put("articleId",wmNews.getArticleId());
                 map.put("enable",dto.getEnable());
-                kafkaTemplate.send(WmNewsMessageConstants.WM_NEWS_UP_OR_DOWN_TOPIC,JSON.toJSONString(map));
+                //kafkaTemplate.send(WmNewsMessageConstants.WM_NEWS_UP_OR_DOWN_TOPIC,JSON.toJSONString(map));
             }
         }
         return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);
