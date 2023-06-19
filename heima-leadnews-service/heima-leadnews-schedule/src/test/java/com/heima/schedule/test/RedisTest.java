@@ -31,7 +31,7 @@ public class RedisTest {
     public void testList(){
 
         //在list的左边添加元素
-//        cacheService.lLeftPush("list_001","hello,redis");
+        //cacheService.lLeftPush("list_001","hello,redis");
 
         //在list的右边获取元素，并删除
         String list_001 = cacheService.lRightPop("list_001");
@@ -41,10 +41,10 @@ public class RedisTest {
     @Test
     public void testZset(){
         //添加数据到zset中  分值
-        /*cacheService.zAdd("zset_key_001","hello zset 001",1000);
-        cacheService.zAdd("zset_key_001","hello zset 002",8888);
-        cacheService.zAdd("zset_key_001","hello zset 003",7777);
-        cacheService.zAdd("zset_key_001","hello zset 004",999999);*/
+//        cacheService.zAdd("zset_key_001","hello zset 001",1000);
+//        cacheService.zAdd("zset_key_001","hello zset 002",8888);
+//        cacheService.zAdd("zset_key_001","hello zset 003",7777);
+//        cacheService.zAdd("zset_key_001","hello zset 004",999999);
 
         //按照分值获取数据
         Set<String> zset_key_001 = cacheService.zRangeByScore("zset_key_001", 0, 8888);
@@ -62,7 +62,6 @@ public class RedisTest {
         System.out.println(scan);
     }
 
-    //耗时6151
     @Test
     public  void testPiple1(){
         long start =System.currentTimeMillis();

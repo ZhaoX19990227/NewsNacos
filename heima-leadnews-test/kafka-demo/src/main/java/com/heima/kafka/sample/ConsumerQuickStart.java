@@ -19,7 +19,7 @@ public class ConsumerQuickStart {
         //1.kafka的配置信息
         Properties prop = new Properties();
         //链接地址
-        prop.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.200.130:9092");
+        prop.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
         //key和value的反序列化器
         prop.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         prop.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
@@ -35,7 +35,7 @@ public class ConsumerQuickStart {
         KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(prop);
 
         //3.订阅主题
-        consumer.subscribe(Collections.singletonList("itcast-topic-out"));
+        consumer.subscribe(Collections.singletonList("testInfoTopic"));
 
         //4.拉取消息
 
@@ -46,8 +46,8 @@ public class ConsumerQuickStart {
                 for (ConsumerRecord<String, String> consumerRecord : consumerRecords) {
                     System.out.println(consumerRecord.key());
                     System.out.println(consumerRecord.value());
-                   /* System.out.println(consumerRecord.offset());
-                    System.out.println(consumerRecord.partition());*/
+                    System.out.println(consumerRecord.offset());
+                    System.out.println(consumerRecord.partition());
                 }
                 //异步提交偏移量
                 consumer.commitAsync();

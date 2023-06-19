@@ -8,20 +8,28 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="heima-file-starter" />
+        <module name="freemarker-demo" />
         <module name="heima-leadnews-wemedia-gateway" />
+        <module name="minio-demo" />
         <module name="heima-leadnews-behavior" />
         <module name="heima-leadnews-wemedia" />
+        <module name="tess4j-demo" />
         <module name="heima-leadnews-feign-api" />
         <module name="heima-leadnews-article" />
         <module name="heima-leadnews-user" />
         <module name="heima-leadnews-admin" />
         <module name="heima-leadnews-admin-gateway" />
+        <module name="kafka-demo" />
+        <module name="task-demo" />
+        <module name="xxljob-demo" />
+        <module name="es-init" />
         <module name="heima-leadnews-schedule" />
         <module name="heima-leadnews-comment" />
         <module name="heima-leadnews-utils" />
         <module name="heima-leadnews-search" />
         <module name="heima-leadnews-app-gateway" />
         <module name="heima-leadnews-common" />
+        <module name="mongo-demo" />
         <module name="heima-leadnews-model" />
       </profile>
     </annotationProcessing>

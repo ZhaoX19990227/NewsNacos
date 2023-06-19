@@ -15,14 +15,11 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello(){
-//        kafkaTemplate.send("itcast-topic","黑马程序员");
-
-
         User user = new User();
-        user.setUsername("xiaowang");
+        user.setUsername("小胖");
         user.setAge(18);
 
-        kafkaTemplate.send("user-topic", JSON.toJSONString(user));
+        kafkaTemplate.send("testInfoTopic", JSON.toJSONString(user));
 
         return "ok";
     }

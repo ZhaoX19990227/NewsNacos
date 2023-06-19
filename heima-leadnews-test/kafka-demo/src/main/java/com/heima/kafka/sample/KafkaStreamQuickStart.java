@@ -20,9 +20,9 @@ public class KafkaStreamQuickStart {
 
     public static void main(String[] args) {
 
-        //kafka的配置信心
+        //kafka的配置信息
         Properties prop = new Properties();
-        prop.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG,"192.168.200.130:9092");
+        prop.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG,"127.0.0.1:9092");
         prop.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         prop.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         prop.put(StreamsConfig.APPLICATION_ID_CONFIG,"streams-quickstart");

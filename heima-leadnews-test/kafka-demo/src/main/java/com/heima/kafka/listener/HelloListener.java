@@ -9,7 +9,7 @@ import org.springframework.util.StringUtils;
 @Component
 public class HelloListener {
 
-    @KafkaListener(topics = "user-topic")
+    @KafkaListener(topics = "testInfoTopic")
     public void onMessage(String message){
         if(!StringUtils.isEmpty(message)){
             User user = JSON.parseObject(message, User.class);

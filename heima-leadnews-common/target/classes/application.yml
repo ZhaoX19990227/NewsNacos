@@ -1,4 +1,4 @@
-#全局端口定义server:
+# 全局端口定义server:
 # 全局字符集设置
 spring:
   http:
@@ -12,3 +12,6 @@ server:
   tomcat:
     uri-encoding: utf-8
 
+tess4j:
+  dataPath: /opt/homebrew/Cellar/tesseract/5.3.1/share/tessdata
+  language: chi_sim

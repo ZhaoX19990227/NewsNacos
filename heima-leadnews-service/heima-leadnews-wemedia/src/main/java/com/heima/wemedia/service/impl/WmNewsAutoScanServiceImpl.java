@@ -204,18 +204,15 @@ public class WmNewsAutoScanServiceImpl implements WmNewsAutoScanService {
                 //从byte[]转换为butteredImage
                 ByteArrayInputStream in = new ByteArrayInputStream(bytes);
                 BufferedImage imageFile = ImageIO.read(in);
-                //识别图片的文字
-                String result = tess4jClient.doOCR(imageFile);
-
-                //审核是否包含自管理的敏感词
-                boolean isSensitive = handleSensitiveScan(result, wmNews);
-                if (!isSensitive) {
-                    return isSensitive;
-                }
-
+//                //识别图片的文字
+//                String result = tess4jClient.doOCR(imageFile);
+//
+//                //审核是否包含自管理的敏感词
+//                boolean isSensitive = handleSensitiveScan(result, wmNews);
+//                if (!isSensitive) {
+//                    return isSensitive;
+//                }
                 //图片识别文字审核---end-----
-
-
                 imageList.add(bytes);
 
             }

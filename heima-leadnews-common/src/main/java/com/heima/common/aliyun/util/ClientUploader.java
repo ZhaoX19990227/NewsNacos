@@ -126,6 +126,7 @@ public class ClientUploader {
             PutObjectResult ret = ossClient.putObject(uploadCredentials.getUploadBucket(), object, new ByteArrayInputStream(bytes));
             return "oss://" + uploadCredentials.getUploadBucket() + "/" + object;
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException("upload file fail.", e);
         } finally {
             if(ossClient != null){
